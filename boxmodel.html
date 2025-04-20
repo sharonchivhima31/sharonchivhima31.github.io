@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Box Model</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: #cce5ff; /* Content area */
+      padding: 20px;             /* Padding area */
+      border: 5px solid #007bff; /* Border area */
+      margin: 30px;              /* Margin area */
+      box-sizing: content-box;   /* Classic box model */
+      position: relative;
+    }
+
+    .box::before,
+    .box::after {
+      position: absolute;
+      left: -9999px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .label {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .wrapper {
+      border: 2px dashed #aaa;
+      padding: 10px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="label">CSS Box Model</div>
+    <div class="box">
+      Content
+    </div>
+  </div>
+
+</body>
+</html>
